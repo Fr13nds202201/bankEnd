@@ -8,7 +8,7 @@ app.listen(port, () => {
 });
 
 //Conexión a la base de datos y sincronización
-db.sync({ force: true }).then(() => {
+db.sync({ force: false }).then(() => {
     console.log("Conexión bd success !!");
 }).catch(error => {
     console.log("se ha producido un error !!", error);

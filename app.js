@@ -2,7 +2,7 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 
-const signRouter = require('./routes/signup.route');
+const router = require('./routes/signup.route');
 
 //iniciar app
 const app = express();
@@ -14,6 +14,8 @@ app.use(express.json());
 app.use(cors());
 
 //RUTAS
-app.use('/api/v1/', signRouter);
+app.use('/api/v1/users', router);
+app.use('/api/v1/transfers', router);
+
 
 module.exports = app;
